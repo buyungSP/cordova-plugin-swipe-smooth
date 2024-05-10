@@ -1,5 +1,7 @@
 ## Swipe Plugin for Cordova
 
+<img src="./images/1.gif"  width="30%" align="right" hspace="19" vspace="12" />
+
 ### Overview
 
 The Swipe plugin for Cordova provides a convenient way to add swipe refresh functionality to your Cordova applications. This plugin allows users to refresh the content of the application by performing a swipe gesture.
@@ -11,7 +13,6 @@ The Swipe plugin for Cordova provides a convenient way to add swipe refresh func
 - **Toast Notification**: Option to display toast notifications before or after refreshing the content.
 - **JavaScript Action**: Ability to define a custom JavaScript action to be executed upon swipe refresh.
 
-<img src="./images/1.gif"  width="60%" align="right" hspace="19" vspace="12" />
 
 ### Installation
 
