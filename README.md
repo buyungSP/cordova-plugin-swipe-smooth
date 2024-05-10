@@ -2,6 +2,10 @@
 
 <img src="./images/1.gif"  width="30%" align="right" hspace="19" vspace="12" />
 
+### Platform Support
+-------------------------------------------------------
+- Android
+
 ### Overview
 
 The Swipe plugin for Cordova provides a convenient way to add swipe refresh functionality to your Cordova applications. This plugin allows users to refresh the content of the application by performing a swipe gesture.
