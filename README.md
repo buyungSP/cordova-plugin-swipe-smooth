@@ -217,7 +217,7 @@ with admob plus banner bottom offset 100
 
 ### Support
 
-For any issues or feature requests, please [submit an issue](<issue-tracker-url>) on the GitHub repository.
+For any issues or feature requests, please [submit an issue](<issue>) on the GitHub repository.
 
 ### License
 
