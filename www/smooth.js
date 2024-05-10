@@ -1,7 +1,7 @@
 
 module.exports = {
     executeCommand: function(command, options = {}) {
-        const finalOption = { ...options }; // Salin semua opsi dari objek options ke finalOption
+        const finalOption = { ...options };
         cordova.exec(null, null, "Swipe", command, [finalOption]);
     },
     initialize: function(options = {}) {
@@ -11,17 +11,17 @@ module.exports = {
             toastText: options.toasText || "location reload",
             jsAction: options.jsAction || "window.location.reload()",
             backgroundColor: options.backgroundColor || "#ffffff",
+            colors: options.colors || ["#000000"],
             distance: options.distance || 200,
-            colors: options.colors || ["#000000"]
         };
         return new Promise(function(successCallback, errorCallback) {
             cordova.exec(result => successCallback(result.toLowerCase() === "ok"), errorCallback, "Swipe", "initialize", [finalOption]);
         });
     },
-    enable: function(options = {}) {
+    enable: function(options = { enable: true}) {
         this.executeCommand("enable", options);
     },
-    enableToast: function(options = {}) {
+    enableToast: function(options = {enable: false}) {
         this.executeCommand("enableToast", options);
     },
     textToast: function(options = {}) {
@@ -30,13 +30,13 @@ module.exports = {
     jsAction: function(options = {}) {
         this.executeCommand("jsAction", options);
     },
-    backgroundColor: function(options = {}) {
+    backgroundColor: function(options = { backgroundColor : "#ffffff"}) {
         this.executeCommand("backgroundColor", options);
     },
-    colors: function(options = {}) {
+    colors: function(options = {colors: ["#000000"]}) {
         this.executeCommand("colors", options);
     },
-    distance: function(options = {}) {
+    distance: function(options = {distance:200}) {
         this.executeCommand("distance", options);
     }
 };

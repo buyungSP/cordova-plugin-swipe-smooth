@@ -63,47 +63,64 @@ cordova.plugin.swipe.smooth.jsAction({ jsAction: "customRefreshFunction()" });
 
 Initializes the Swipe plugin with the specified options.
 
-- `options`: An object containing initialization options.
+- `options`
+    - `isEnable` : `boolean` default: `true`
+    - `toastShow` : `boolean` default: `false`
+    - `toastText` : `string` default: `"location reload"`
+    - `jsAction` : `string` default: `"window.location.reload()"`
+    - `backgroundColor` : `string` default: `"#ffffff"`
+    - `colors` : `array` default: `["#000000"]`
+    - `distance` : `int` default: `200`
+
 
 #### `enable()`
 
 Enables swipe refresh functionality.
 
+- `options`
+    - `enable` : `boolean`
+
 #### `enableToast(options)`
 
 Enables or disables toast notifications.
 
-- `options`: An object containing options for enabling toast notifications.
+- `options`
+    - `enable` : `boolean`
 
 #### `textToast(options)`
 
 Sets the text for the toast notification.
 
-- `options`: An object containing the text for the toast notification.
+- `options`
+    - `text` : `string`
 
 #### `jsAction(options)`
 
 Sets the JavaScript action to be executed upon swipe refresh.
 
-- `options`: An object containing the JavaScript action.
+- `options`
+    - `jsAction` : `string`
 
 #### `backgroundColor(options)`
 
 Sets the background color of the swipe refresh layout.
 
-- `options`: An object containing the background color.
+- `options`
+    - `backgroundColor` : `string`
 
 #### `colors(options)`
 
 Sets the colors for the swipe refresh animation.
 
-- `options`: An object containing an array of colors.
+- `options`
+    - `colors` : `array`
 
 #### `distance(options)`
 
 Sets the distance in pixels the user must swipe to trigger a refresh.
 
-- `options`: An object containing the distance value.
+- `options`
+    - `distance` : `int`
 
 
 ### Usage with AdMob-Plus Plugin
