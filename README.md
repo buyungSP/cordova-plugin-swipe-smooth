@@ -11,6 +11,8 @@ The Swipe plugin for Cordova provides a convenient way to add swipe refresh func
 - **Toast Notification**: Option to display toast notifications before or after refreshing the content.
 - **JavaScript Action**: Ability to define a custom JavaScript action to be executed upon swipe refresh.
 
+<img src="./images/1.gif"  width="60%" align="right" hspace="19" vspace="12" />
+
 ### Installation
 
 To install the Swipe plugin into your Cordova project, use the following command:
@@ -98,9 +100,6 @@ Sets the distance in pixels the user must swipe to trigger a refresh.
 
 - `options`: An object containing the distance value.
 
-### Screenshots
-
-<img src="./images/1.gif" width="180px"/>
 
 ### Usage with AdMob-Plus Plugin
 
