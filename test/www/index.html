@@ -22,21 +22,21 @@
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready</p>
         </div>
-        <button id="disable" value="false">disable</button>
+        <button id="disable">disable</button>
         <br>
-        <button id="enable" value="true">enable</button>
+        <button id="enable">enable</button>
         <br>
-        <button id="enableToast" value="true">enable Toast</button>
+        <button id="enableToast">enable Toast</button>
         <br>
-        <button id="textToast" value="test change text toast">text Toast</button>
+        <button id="textToast" value=>text Toast</button>
         <br>
-        <button id="backgroundColor" value="#000000">background color</button>
+        <button id="backgroundColor">background color</button>
+        <br>
+        <button id="jsAction">action</button>
         <br>
         <button id="colors">loading colors</button>
         <br>
         <button id="distance">distance</button>
-        <br>
-        <button id="jsAction">action</button>
     </div>
     <footer style="position: fixed;bottom: 0;">
         is footer
@@ -51,44 +51,28 @@
             const swipe = await smooth.initialize({})
             if (swipe) {
                 document.querySelector("#enable").addEventListener("click", function() {
-                    smooth.enable({
-                        enable: this.value
-                    })
+                    smooth.enableSwipe(true)
                 })
                 document.querySelector("#disable").addEventListener("click", function() {
-                    smooth.enable({
-                        enable: this.value
-                    })
+                    smooth.enableSwipe(false)
                 })
                 document.querySelector("#enableToast").addEventListener("click", function() {
-                    smooth.enableToast({
-                        enable: this.value
-                    })
+                    smooth.enableToast(true)
                 })
                 document.querySelector("#textToast").addEventListener("click", function() {
-                    smooth.textToast({
-                        text: this.value
-                    })
-                })
-                document.querySelector("#backgroundColor").addEventListener("click", function() {
-                    smooth.backgroundColor({
-                        backgroundColor: this.value
-                    })
-                })
-                document.querySelector("#colors").addEventListener("click", function() {
-                    smooth.colors({
-                        colors: ['#FFFFFF']
-                    })
-                })
-                document.querySelector("#distance").addEventListener("click", function() {
-                    smooth.distance({
-                        distance: 100
-                    })
+                    smooth.enableToast("test change text toast")
                 })
                 document.querySelector("#jsAction").addEventListener("click", function() {
-                    smooth.jsAction({
-                        jsAction: "log()"
-                    })
+                    smooth.setJsAction("log()")
+                })
+                document.querySelector("#backgroundColor").addEventListener("click", function() {
+                    smooth.setBackgroundColor("#000000")
+                })
+                document.querySelector("#colors").addEventListener("click", function() {
+                    smooth.setColorsAnimation(['#FFFFFF'])
+                })
+                document.querySelector("#distance").addEventListener("click", function() {
+                    smooth.setDistance(100)
                 })
             }
 

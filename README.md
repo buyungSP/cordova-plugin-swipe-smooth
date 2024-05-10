@@ -32,8 +32,38 @@ After installing the plugin, you can utilize its functionality in your JavaScrip
 
 ```javascript
 // Initialize the Swipe plugin
+cordova.plugin.swipe.smooth.initialize().then(success => {
+    if (success) {
+        console.log("Swipe plugin initialized successfully");
+    } else {
+        console.error("Failed to initialize Swipe plugin");
+    }
+});
+
+// Enable swipe refresh
+cordova.plugin.swipe.smooth.enableSwipe();
+
+// Customize options
+cordova.plugin.swipe.smooth.setBackgroundColor("#f0f0f0");
+cordova.plugin.swipe.smooth.setTextToast("Pull down to refresh");
+cordova.plugin.swipe.smooth.setJsAction("customRefreshFunction()");
+```
+
+### API Reference
+
+#### `initialize`
+
+```javascript
+/**
+ *
+ * Initializes the Swipe plugin with the specified options.
+ *  
+ * @param {Object}  { isEnable, toastShow, toastText, jsAction, backgroundColor, colors, distance }
+ * @return {String} - cordova callback
+ * 
+ */
 cordova.plugin.swipe.smooth.initialize({
-    isEnable: true,
+    isEnable: true, 
     toastShow: true,
     toastText: "Refreshing...",
     jsAction: "window.location.reload()",
@@ -47,81 +77,119 @@ cordova.plugin.swipe.smooth.initialize({
         console.error("Failed to initialize Swipe plugin");
     }
 });
-
-// Enable swipe refresh
-cordova.plugin.swipe.smooth.enable();
-
-// Customize options
-cordova.plugin.swipe.smooth.backgroundColor({ backgroundColor: "#f0f0f0" });
-cordova.plugin.swipe.smooth.textToast({ text: "Pull down to refresh" });
-cordova.plugin.swipe.smooth.jsAction({ jsAction: "customRefreshFunction()" });
 ```
 
-### API Reference
+#### `enableSwipe`
 
-#### `initialize(options)`
+```javascript
+/**
+ *
+ * Enables swipe refresh functionality.
+ *  
+ * @param {Boolean} - default true
+ * @return {String} - cordova callback
+ * 
+ */
 
-Initializes the Swipe plugin with the specified options.
+cordova.plugin.swipe.smooth.enableSwipe(true)
 
-- `options`
-    - `isEnable` : `boolean` default: `true`
-    - `toastShow` : `boolean` default: `false`
-    - `toastText` : `string` default: `"location reload"`
-    - `jsAction` : `string` default: `"window.location.reload()"`
-    - `backgroundColor` : `string` default: `"#ffffff"`
-    - `colors` : `array` default: `["#000000"]`
-    - `distance` : `int` default: `200`
+```
 
+#### `enableToast`
 
-#### `enable()`
+```javascript
+/**
+ *
+ * Enables or disables toast notifications.
+ *  
+ * @param {Boolean} - default true
+ * @return {String} - cordova callback
+ * 
+ */
 
-Enables swipe refresh functionality.
+cordova.plugin.swipe.smooth.enableToast(true)
 
-- `options`
-    - `enable` : `boolean`
+```
 
-#### `enableToast(options)`
+#### `setTextToast`
 
-Enables or disables toast notifications.
+```javascript
+/**
+ *
+ * Sets the text for the toast notification.
+ *  
+ * @param {String} - default NULL
+ * @return {String} - cordova callback
+ * 
+ */
 
-- `options`
-    - `enable` : `boolean`
+cordova.plugin.swipe.smooth.setTextToast()
 
-#### `textToast(options)`
+```
 
-Sets the text for the toast notification.
+#### `setJsAction`
 
-- `options`
-    - `text` : `string`
+```javascript
+/**
+ *
+ * Sets the JavaScript action to be executed upon swipe refresh.
+ *  
+ * @param {String} - default "window.location.reload()"
+ * @return {String} - cordova callback
+ * 
+ */
 
-#### `jsAction(options)`
+cordova.plugin.swipe.smooth.setJsAction("window.location.reload()")
 
-Sets the JavaScript action to be executed upon swipe refresh.
+```
 
-- `options`
-    - `jsAction` : `string`
+#### `setBackgroundColor`
 
-#### `backgroundColor(options)`
+```javascript
+/**
+ *
+ * Sets the background color of the swipe refresh layout.
+ *  
+ * @param {String} - default "#ffffff"
+ * @return {String} - cordova callback
+ * 
+ */
 
-Sets the background color of the swipe refresh layout.
+cordova.plugin.swipe.smooth.setBackgroundColor("#ffffff")
 
-- `options`
-    - `backgroundColor` : `string`
+```
 
-#### `colors(options)`
+#### `setColorsAnimation`
 
-Sets the colors for the swipe refresh animation.
+```javascript
+/**
+ *
+ * Sets the colors for the swipe refresh animation.
+ *  
+ * @param {Array} - default ["#000000"]
+ * @return {String} - cordova callback
+ * 
+ */
 
-- `options`
-    - `colors` : `array`
+cordova.plugin.swipe.smooth.setColorsAnimation(["#000000"])
 
-#### `distance(options)`
+```
 
-Sets the distance in pixels the user must swipe to trigger a refresh.
+#### `setDistance`
 
-- `options`
-    - `distance` : `int`
+```javascript
+/**
+ *
+ * Sets the distance in pixels the user must swipe to trigger a refresh.
+ *  
+ * @param {Int} - default 200
+ * @return {String} - cordova callback
+ * 
+ */
 
+cordova.plugin.swipe.smooth.setDistance(200)
+
+```
 
 ### Usage with AdMob-Plus Plugin
 

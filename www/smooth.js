@@ -1,42 +1,49 @@
-
 module.exports = {
     executeCommand: function(command, options = {}) {
-        const finalOption = { ...options };
-        cordova.exec(null, null, "Swipe", command, [finalOption]);
+        cordova.exec(null, null, "Swipe", command, [options]);
     },
     initialize: function(options = {}) {
-        const finalOption = {
-            isEnable: options.isEnable || true,
-            toastShow: options.toastShow || false,
-            toastText: options.toasText || "location reload",
-            jsAction: options.jsAction || "window.location.reload()",
-            backgroundColor: options.backgroundColor || "#ffffff",
-            colors: options.colors || ["#000000"],
-            distance: options.distance || 200,
-        };
+        const {
+            isEnable = true,
+            toastShow = false,
+            toastText = "Refreshing...",
+            jsAction = "window.location.reload()",
+            backgroundColor = "#ffffff",
+            colors = ["#000000"],
+            distance = 200
+        } = options;
+
         return new Promise(function(successCallback, errorCallback) {
-            cordova.exec(result => successCallback(result.toLowerCase() === "ok"), errorCallback, "Swipe", "initialize", [finalOption]);
+            cordova.exec(result => successCallback(result.toLowerCase() === "ok"), errorCallback, "Swipe", "initialize", [{
+                isEnable,
+                toastShow,
+                toastText,
+                jsAction,
+                backgroundColor,
+                colors,
+                distance
+            }]);
         });
     },
-    enable: function(options = { enable: true}) {
-        this.executeCommand("enable", options);
+    enableSwipe: function(set = true) {
+        this.executeCommand("enable", { enable: set });
     },
-    enableToast: function(options = {enable: false}) {
-        this.executeCommand("enableToast", options);
+    enableToast: function(set = true) {
+        this.executeCommand("enableToast", { enable: set });
     },
-    textToast: function(options = {}) {
-        this.executeCommand("textToast", options);
+    setTextToast: function(toastText = "") {
+        this.executeCommand("textToast", { toastText });
     },
-    jsAction: function(options = {}) {
-        this.executeCommand("jsAction", options);
+    setJsAction: function(jsAction = "window.location.reload()") {
+        this.executeCommand("jsAction", { jsAction });
     },
-    backgroundColor: function(options = { backgroundColor : "#ffffff"}) {
-        this.executeCommand("backgroundColor", options);
+    setBackgroundColor: function(backgroundColor = "#ffffff") {
+        this.executeCommand("backgroundColor", { backgroundColor });
     },
-    colors: function(options = {colors: ["#000000"]}) {
-        this.executeCommand("colors", options);
+    setColorsAnimation: function(colors = ["#000000"]) {
+        this.executeCommand("colors", { colors });
     },
-    distance: function(options = {distance:200}) {
-        this.executeCommand("distance", options);
+    setDistance: function(distance = 200) {
+        this.executeCommand("distance", { distance });
     }
 };
