@@ -116,19 +116,13 @@ with admob plus banner top
 
 <img src="./images/2.gif" width="180px"/>
 
-### Screenshots
-
 with admob plus banner top offset 100
 
 <img src="./images/3.gif" width="180px"/>
 
-### Screenshots
-
 with admob plus banner bottom
 
 <img src="./images/4.gif" width="180px"/>
-
-### Screenshots
 
 with admob plus banner bottom offset 100
 
