@@ -1,0 +1,24 @@
+{
+  "name": "cordova-plugin-swipe-smooth",
+  "displayName": "smoothSwipe",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "Cordova",
+    "Plugin",
+    "swipe",
+    "loading",
+    "xml"
+  ],
+  "author": "Buyung setiawan purnomo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buyungSP/cordova-plugin-swipe-smooth.git"
+  },
+  "homepage": "https://github.com/buyungSP/cordova-plugin-swipe-smooth#readme"
+}
