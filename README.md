@@ -214,15 +214,6 @@ with admob plus banner bottom offset 100
 <img src="./images/5.gif" width="180px"/>
 
 
-
-### Support
-
-For any issues or feature requests, please [submit an issue](<issues>) on the GitHub repository.
-
-### License
-
-This plugin is licensed under the [MIT License](<license-url>).
-
 ---
 
 Feel free to customize the README according to your project's needs. This template provides a basic structure to help you get started with documenting your Swipe plugin for Cordova.
