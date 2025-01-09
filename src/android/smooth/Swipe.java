@@ -180,6 +180,11 @@ public class Swipe extends CordovaPlugin {
         swipeLayout.setColorSchemeColors(colors);
         swipeLayout.setProgressBackgroundColorSchemeColor(backgroundColor);
         swipeLayout.setDistanceToTriggerSync(distance);
+
+        // Disable swipe if not at the top
+        webViews.setOnScrollChangeListener((View.OnScrollChangeListener) (v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+            swipeLayout.setEnabled(scrollY == 0); // Enable SwipeRefresh only at top
+        });
     }
 }
 
